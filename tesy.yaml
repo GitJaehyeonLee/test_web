@@ -1,0 +1,21 @@
+---
+- name: web configuration
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: git installation
+      yum:
+        name: git
+        state: present
+
+    - name: httpd installation
+      yum:
+        name: httpd
+        state: absent
+
+    - name: httpd start and enable
+      service:
+        name: httpd
+        state: started
+        enabled: true
