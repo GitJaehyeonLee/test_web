@@ -12,7 +12,7 @@
     - name: httpd installation
       yum:
         name: httpd
-        state: latest
+        state: present
 
     - name: httpd start and enable
       service:
